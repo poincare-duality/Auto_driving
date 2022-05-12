@@ -1,0 +1,84 @@
+{
+    "agent": {
+        "__class__": "<class 'rl_agents.agents.deep_q_network.pytorch.DQNAgent'>",
+        "batch_size": 32,
+        "device": "cuda:best",
+        "double": false,
+        "exploration": {
+            "final_temperature": 0.05,
+            "method": "EpsilonGreedy",
+            "tau": 6000,
+            "temperature": 1.0
+        },
+        "gamma": 0.8,
+        "loss_function": "l2",
+        "memory_capacity": 15000,
+        "model": {
+            "activation": "RELU",
+            "in": 25,
+            "layers": [
+                256,
+                256
+            ],
+            "out": 5,
+            "reshape": "True",
+            "type": "MultiLayerPerceptron"
+        },
+        "n_steps": 1,
+        "optimizer": {
+            "k": 5,
+            "lr": 0.0005,
+            "type": "ADAM",
+            "weight_decay": 0
+        },
+        "target_update": 50
+    },
+    "env": {
+        "__class__": "<class 'gym.wrappers.order_enforcing.OrderEnforcing'>",
+        "action": {
+            "type": "DiscreteMetaAction"
+        },
+        "aggressive_vehicle_type": "highway_env.vehicle.behavior.AggressiveCar",
+        "aggressive_vehicle_type2": "highway_env.vehicle.behavior.VeryAggressiveCar",
+        "centering_position": [
+            0.3,
+            0.5
+        ],
+        "collision_reward": -1,
+        "controlled_vehicles": 1,
+        "duration": 60,
+        "ego_spacing": 2,
+        "high_speed_reward": 0.4,
+        "id": "highway-v0",
+        "import_module": null,
+        "initial_lane_id": null,
+        "lane_change_reward": 0,
+        "lanes_count": 4,
+        "manual_control": false,
+        "observation": {
+            "type": "Kinematics"
+        },
+        "offroad_terminal": false,
+        "offscreen_rendering": true,
+        "other_vehicles_type": "highway_env.vehicle.behavior.IDMVehicle",
+        "other_vehicles_type_1": "highway_env.vehicle.behavior.IDMVehicle",
+        "other_vehicles_type_2": "highway_env.vehicle.behavior.IDMLargeVehicle",
+        "perc_aggressive": 0.2,
+        "perc_large_vehicles": 0.12,
+        "policy_frequency": 1,
+        "real_time_rendering": false,
+        "render_agent": true,
+        "reward_speed_range": [
+            20,
+            30
+        ],
+        "right_lane_reward": 0.1,
+        "scaling": 5.5,
+        "screen_height": 150,
+        "screen_width": 600,
+        "show_trajectories": false,
+        "simulation_frequency": 15,
+        "vehicles_count": 5,
+        "vehicles_density": 1
+    }
+}
